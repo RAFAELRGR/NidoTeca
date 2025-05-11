@@ -47,14 +47,14 @@ export default function Navbar() {
                 Inicio
               </Link>
               <Link
-                href="/pasos-formalizacion"
+                href="/FormalizationSteps"
                 className="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-50"
                 onClick={closeMenu}
               >
                 Pasos
               </Link>
               <Link
-                href="/beneficios"
+                href="/Benefits"
                 className="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-50"
                 onClick={closeMenu}
               >
@@ -149,14 +149,14 @@ export default function Navbar() {
             Inicio
           </Link>
           <Link
-            href="/pasos-formalizacion"
+            href="/FormalizationSteps"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-blue-50"
             onClick={closeMenu}
           >
             Pasos para Formalizar
           </Link>
           <Link
-            href="/beneficios"
+            href="/Benefits"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-blue-50"
             onClick={closeMenu}
           >
