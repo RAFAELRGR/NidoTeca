@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 
 const benefits = [
   {
@@ -64,28 +65,7 @@ export default function BenefitsSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {benefits.map((benefit, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="perspective-1000 h-64"
-          >
-            <div className="relative w-full h-full transition-all duration-500 transform-style-preserve-3d group hover:rotate-y-180">
-              {/* Cara frontal */}
-              <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-6 flex flex-col items-center justify-center border-2 border-gray-200">
-                <span className="text-5xl mb-4">{benefit.front}</span>
-                <h3 className="text-xl font-bold text-gray-900">{benefit.title}</h3>
-                <p className="mt-2 text-sm text-gray-500">Pasa el cursor para más info</p>
-              </div>
-              
-              {/* Cara trasera */}
-              <div className={`absolute w-full h-full backface-hidden rounded-xl p-6 flex items-center justify-center bg-gradient-to-br ${benefit.color} text-white rotate-y-180`}>
-                <p className="text-center font-medium">{benefit.back}</p>
-              </div>
-            </div>
-          </motion.div>
+          <BenefitCard key={index} index={index} benefit={benefit} />
         ))}
       </div>
 
@@ -104,5 +84,41 @@ export default function BenefitsSection() {
         </Link>
       </motion.div>
     </section>
+  );
+}
+
+function BenefitCard({ index, benefit }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="perspective-1000 h-64"
+    >
+      <div 
+        className={`relative w-full h-full transition-all duration-500 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}
+        onClick={() => setIsFlipped(!isFlipped)}
+        onMouseEnter={() => window.innerWidth > 768 && setIsFlipped(true)}
+        onMouseLeave={() => window.innerWidth > 768 && setIsFlipped(false)}
+      >
+        {/* Cara frontal */}
+        <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-6 flex flex-col items-center justify-center border-2 border-gray-200">
+          <span className="text-5xl mb-4">{benefit.front}</span>
+          <h3 className="text-xl font-bold text-gray-900">{benefit.title}</h3>
+          <p className="mt-2 text-sm text-gray-500">
+            <span className="hidden md:inline">Pasa el cursor para más info</span>
+            <span className="md:hidden">Toca para más info ☝️📱</span>
+          </p>
+        </div>
+        
+        {/* Cara trasera */}
+        <div className={`absolute w-full h-full backface-hidden rounded-xl p-6 flex items-center justify-center bg-gradient-to-br ${benefit.color} text-white rotate-y-180`}>
+          <p className="text-center font-medium">{benefit.back}</p>
+        </div>
+      </div>
+    </motion.div>
   );
 }
