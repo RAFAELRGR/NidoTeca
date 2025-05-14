@@ -31,7 +31,7 @@ export default function Navbar() {
                 />
               </div>
               <span className="self-center text-xl font-bold whitespace-nowrap text-blue-900">
-                Formalización Zipaquirá
+                NidoTeca
               </span>
             </Link>
           </div>
@@ -75,7 +75,7 @@ export default function Navbar() {
                 Costos
               </Link>
               <Link
-                href="/preguntas-frecuentes"
+                href="/CommentsSection"
                 className="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-50"
                 onClick={closeMenu}
               >
@@ -177,7 +177,7 @@ export default function Navbar() {
             Costos y Tarifas
           </Link>
           <Link
-            href="/preguntas-frecuentes"
+            href="/CommentsSection"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-blue-50"
             onClick={closeMenu}
           >

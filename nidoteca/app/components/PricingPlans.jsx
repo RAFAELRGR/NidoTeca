@@ -27,7 +27,7 @@ export function PricingPlans() {
         <div className="rounded-3xl rounded-t-3xl bg-white/60 p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl">
           <h3 id="tier-basic" className="text-base font-semibold text-green-700">Básico</h3>
           <p className="mt-4 flex items-baseline gap-x-2">
-            <span className="text-5xl font-bold tracking-tight text-gray-900">$0</span>
+            <span className="text-5xl font-bold tracking-tight text-gray-900">COP $0</span>
             <span className="text-base text-gray-500">/siempre</span>
           </p>
           <p className="mt-6 text-base text-gray-600">
@@ -67,7 +67,7 @@ export function PricingPlans() {
           </div>
           <h3 id="tier-plus" className="text-base font-semibold text-white">Plus</h3>
           <p className="mt-4 flex items-baseline gap-x-2">
-            <span className="text-5xl font-bold tracking-tight text-white">$4.50</span>
+            <span className="text-5xl font-bold tracking-tight text-white">COP $35.000</span>
             <span className="text-base text-gray-300">/mes</span>
           </p>
           <p className="mt-6 text-base text-gray-200">
@@ -80,7 +80,7 @@ export function PricingPlans() {
             </li>
             <li className="flex gap-x-3">
               <CheckIcon className="h-6 w-5 flex-none text-white" />
-              Asesoría personalizada 1:1
+              Asesoría personalizada 1:1 (Dependiendo el Tipo de Negocio)
             </li>
             <li className="flex gap-x-3">
               <CheckIcon className="h-6 w-5 flex-none text-white" />
@@ -96,7 +96,7 @@ export function PricingPlans() {
             </li>
             <li className="flex gap-x-3">
               <CheckIcon className="h-6 w-5 flex-none text-white" />
-              Descuentos en trámites notariales
+              ¡Mantente al tanto de cambios y nuevos beneficios y/o descuentos tributarios al instante!
             </li>
           </ul>
           <a
