@@ -61,18 +61,11 @@ export default function Navbar() {
                 Beneficios
               </Link>
               <Link
-                href="/requisitos"
+                href="/Requirements"
                 className="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-50"
                 onClick={closeMenu}
               >
                 Requisitos
-              </Link>
-              <Link
-                href="/costos"
-                className="text-gray-700 hover:text-blue-900 px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-50"
-                onClick={closeMenu}
-              >
-                Costos
               </Link>
               <Link
                 href="/CommentsSection"
@@ -163,7 +156,7 @@ export default function Navbar() {
             Beneficios
           </Link>
           <Link
-            href="/requisitos"
+            href="/Requirements"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-blue-50"
             onClick={closeMenu}
           >
